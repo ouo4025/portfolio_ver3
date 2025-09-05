@@ -696,7 +696,7 @@
 }
 
 .skill-txt{
-  margin: 27px 0 0 31px;
+  margin: 27px 25px 0 31px;
 }
 
 
@@ -706,35 +706,9 @@
   font-family: 'Galmuri9';
   font-size: 21px;
   margin-bottom: 24px;
+  justify-content: space-between;
 }
 
-.skill-txt > li:nth-child(1){
-  gap: 15px;
-}
-
-.skill-txt > li:nth-child(2){
-  gap: 17px;
-}
-
-.skill-txt > li:nth-child(3){
-  gap: 75px;
-}
-
-.skill-txt > li:nth-child(4){
-  gap: 89px;
-}
-
-.skill-txt > li:nth-child(5){
-  gap: 15px;
-}
-
-.skill-txt > li:nth-child(6){
-  gap: 66px;
-}
-
-.skill-txt > li:nth-child(7){
-  gap: 58px;
-}
 
 .skill-txt > li .skill-bar{
   width: 152px;
