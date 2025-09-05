@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+html { font-size: 10px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+table { border-collapse: collapse; width: 100%; }
+ol, li { list-style: none; }
+a { color: inherit; text-decoration: none; }
+address,em { font-style: normal; }
+caption,legend { display: none; }
+select,input,fieldset,button { border: 0; outline: none; vertical-align: top; }
+img{vertical-align: top; border: 0;}
+
+body{
+   font-family: 'DungGeunMo';
+   font-weight: normal;
+   font-style: normal;
+   color: #313131;
+   font-size: 17px;
+   cursor: url(../img/cursor_icon2.png) 0 0, auto;
+}
+
+a:hover {
+  cursor: url(../img/cursor_pointer.png) 0 0, pointer;
+}
