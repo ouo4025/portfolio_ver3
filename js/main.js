@@ -119,11 +119,17 @@ $(document).ready(function(){
   $(".p-folder-open").hide();
   $(".p-folder-close").show();
 
-  // 처음 상태: 첫 번째 li 활성화 상태
-  $(".project-folder > ul > li").removeClass("active");
-  $(".project-folder > ul > li").eq(0).addClass("active")
-    .find(".p-folder-close").hide()
-    .siblings(".p-folder-open").show();
+ // 처음 상태: 첫 번째 li를 클릭한 것처럼 처리
+$(".project-folder > ul > li").removeClass("active");
+$(".project-folder > ul > li .p-folder-open").hide();
+$(".project-folder > ul > li .p-folder-close").show();
+
+$(".project-folder > ul > li").eq(0).addClass("active")
+  .find(".p-folder-close").hide()
+  .siblings(".p-folder-open").show();
+
+  
+
 
   // 폴더 hover 이벤트
   $(".project-folder > ul > li").hover(
@@ -141,7 +147,8 @@ $(document).ready(function(){
     }
   );
 
-// 폴더 클릭 이벤트
+
+// 프로젝트 폴더 클릭 이벤트
 $(".project-folder > ul > li").on("click", function () {
   const index = $(this).index();
   const works = $(".work");
@@ -157,33 +164,28 @@ $(".project-folder > ul > li").on("click", function () {
   gsap.fromTo(
     targetWork.find(".project-card, .main-tit-wrap"),
     { x: 100, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.1 //순차적으로 애니메이션이 되도록
-    }
+    { x: 0, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 }
   );
 
-    gsap.fromTo(
+  gsap.fromTo(
     targetWork.find(".mobile-wrap"),
     { x: 100, opacity: 0 },
-    {
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.1 
-    }
+    { x: 0, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.1 }
   );
 
-  // project 폴더 아이콘 
+  // 아이콘 상태 초기화 
+  $(".project-folder > ul > li").removeClass("active");
   $(".project-folder > ul > li .p-folder-open").hide();
   $(".project-folder > ul > li .p-folder-close").show();
+
+  //클릭한 li만 활성화 & open 유지 
+  $(this).addClass("active");
   $(this).find(".p-folder-close").hide();
   $(this).find(".p-folder-open").show();
 });
+
+
+
 
 
   
